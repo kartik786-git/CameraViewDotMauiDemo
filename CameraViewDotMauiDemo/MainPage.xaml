@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="CameraViewDotMauiDemo.MainPage">
+
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,30,20,30" Spacing="20" HorizontalOptions="Center">
+
+            <Image
+    x:Name="MyImage"
+    Source="dotnet_bot.png"
+    HeightRequest="185"
+    Aspect="AspectFit"
+    SemanticProperties.Description="dot net bot in a race car number eight" />
+
+            <toolkit:CameraView 
+       x:Name="MyCamera" 
+       WidthRequest="300" 
+       HeightRequest="300" 
+       MediaCaptured="MyCamera_MediaCaptured" 
+       HorizontalOptions="Center" 
+       BackgroundColor="Black"
+    />
+            
+
+            <Button Text="Capture" 
+         Clicked="Capture_Image" 
+         BackgroundColor="#FF6347" 
+         TextColor="White" 
+         FontSize="20"
+         WidthRequest="200"
+         HeightRequest="50"
+        
+         HorizontalOptions="Center"
+         Margin="0,20"/>
+
+            <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto" Padding="5" 
+                  HorizontalOptions="Center" 
+                  VerticalOptions="Center">
+
+                <!-- Back camera Button -->
+                <Button Text="Back camera" 
+          Clicked="Back_Camera" 
+          Grid.Row="0" 
+          Grid.Column="0" 
+          BackgroundColor="#4CAF50" 
+          TextColor="White" 
+         Margin="5"
+          Padding="10,0" 
+          FontSize="14"
+          HorizontalOptions="Fill"/>
+
+                <!-- Front camera Button -->
+                <Button Text="Front camera" 
+          Clicked="Front_Camera" 
+          Grid.Row="0" 
+          Grid.Column="1" 
+          BackgroundColor="#2196F3" 
+          TextColor="White" 
+         Margin="5"
+          Padding="10,0" 
+          FontSize="14"
+          HorizontalOptions="Fill"/>
+
+                <!-- Flash Button -->
+                <Button Text="Flash" 
+          Clicked="Flash_On_Off" 
+          Grid.Row="1" 
+          Grid.Column="0" 
+          BackgroundColor="DarkGrey" 
+          TextColor="Black" 
+          Margin="5"
+          Padding="10,0" 
+          FontSize="14"
+          HorizontalOptions="Fill"/>
+
+                <!-- Zoom Button -->
+                <Button Text="Zoom" 
+          Clicked="Zoom_In" 
+          Grid.Row="1" 
+          Grid.Column="1" 
+          BackgroundColor="#9C27B0" 
+          TextColor="White" 
+         Margin="5"
+          Padding="10,0" 
+          FontSize="14"
+          HorizontalOptions="Fill"/>
+            </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
